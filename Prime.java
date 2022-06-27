@@ -1,33 +1,31 @@
-import java.util.Scanner;
+public class main
+ {
+   public static void main (String[]args)
+   {
 
-public class Prime {
+     int lower = 1, upper = 20;
 
-public static void main(String[] args)
-{
-Scanner sc = new Scanner(System.in);
-int a, b, i, j, flag;
 
-a = 2
-System.out.printf("\nEnter Range: ");
-b = sc.nextInt();
+     for (int i = lower; i <= upper; i++)
+       if (isPrime (i))
+        System.out.println (i);
+   }
+   static boolean isPrime (int n)
+   {
+     int count = 0;
 
-System.out.printf("\nPrime numbers between %d and %d are: ", a, b);
 
-for (i = a; i <= b; i++) {
+     if (n < 2)
+       return false;
 
-if (i == 1 || i == 0)
-continue;
-flag = 1;
+     
+     for (int i = 2; i < n; i++)
+       {
+     if (n % i == 0)
+        return false;
+       }
 
-for (j = 2; j <= i / 2; ++j) {
-if (i % j == 0) {
-flag = 0;
-break;
-}
-}
-
-if (flag == 1)
-System.out.println(i);
-}
-}
-}
+     
+     return true;
+   }
+ }
